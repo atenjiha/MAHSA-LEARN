@@ -1,11 +1,40 @@
-<div align="center">
+# MAHSA MicroLearn Platform
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+This is a React-based Progressive Web App (PWA) prototype for the MAHSA Specialist Hospital Microlearning platform.
 
-  <h1>Built with AI Studio</h2>
+## 🚀 How to Run (For IT)
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+1.  **Install Dependencies:**
+    ```bash
+    npm install
+    ```
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+2.  **Run Locally:**
+    ```bash
+    npm run dev
+    ```
 
-</div>
+3.  **Build for Production:**
+    ```bash
+    npm run build
+    ```
+    The output will be in the `dist/` folder. Serve this folder using any static web server (Nginx, Apache, Vercel, Netlify).
+
+## ⚠️ Important Architecture Note
+
+**Persistence Strategy: LocalStorage**
+
+This application currently uses `localStorage` for data persistence. This means:
+1.  **Data is isolated per device.** (Courses created on Device A will NOT appear on Device B).
+2.  **No Backend.** There is no centralized API or Database connected.
+
+**For Production Use:**
+To enable centralized course management where Educators push content to all Nurses, this app must be connected to a backend service (e.g., Firebase, Supabase, or a REST API).
+
+## Tech Stack
+*   React 18
+*   TypeScript
+*   Tailwind CSS (via CDN)
+*   Vite
+*   Lucide React (Icons)
+*   Recharts (Analytics)
