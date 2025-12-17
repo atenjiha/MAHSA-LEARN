@@ -17,7 +17,7 @@ router.get('/', async (req: Request, res: Response) => {
 // Get course by ID
 router.get('/:id', async (req: Request, res: Response) => {
   try {
-    const course = await Course.findById(req.params.id);
+    const course = await Course.findOne({ id: req.params.id });
     if (!course) return res.status(404).json({ message: 'Course not found' });
     res.json(course);
   } catch (error) {
@@ -39,7 +39,11 @@ router.post('/', async (req: Request, res: Response) => {
 // Update course
 router.put('/:id', async (req: Request, res: Response) => {
   try {
-    const course = await Course.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    const course = await Course.findOneAndUpdate(
+      { id: req.params.id },
+      req.body,
+      { new: true, runValidators: true }
+    );
     if (!course) return res.status(404).json({ message: 'Course not found' });
     res.json(course);
   } catch (error) {
@@ -50,7 +54,7 @@ router.put('/:id', async (req: Request, res: Response) => {
 // Delete course
 router.delete('/:id', async (req: Request, res: Response) => {
   try {
-    const course = await Course.findByIdAndDelete(req.params.id);
+    const course = await Course.findOneAndDelete({ id: req.params.id });
     if (!course) return res.status(404).json({ message: 'Course not found' });
     res.json({ message: 'Course deleted' });
   } catch (error) {

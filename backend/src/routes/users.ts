@@ -17,7 +17,7 @@ router.get('/', async (req: Request, res: Response) => {
 // Get user by ID
 router.get('/:id', async (req: Request, res: Response) => {
   try {
-    const user = await User.findById(req.params.id);
+    const user = await User.findOne({ id: req.params.id });
     if (!user) return res.status(404).json({ message: 'User not found' });
     res.json(user);
   } catch (error) {
@@ -39,7 +39,11 @@ router.post('/', async (req: Request, res: Response) => {
 // Update user
 router.put('/:id', async (req: Request, res: Response) => {
   try {
-    const user = await User.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    const user = await User.findOneAndUpdate(
+      { id: req.params.id },
+      req.body,
+      { new: true, runValidators: true }
+    );
     if (!user) return res.status(404).json({ message: 'User not found' });
     res.json(user);
   } catch (error) {
@@ -50,7 +54,7 @@ router.put('/:id', async (req: Request, res: Response) => {
 // Delete user
 router.delete('/:id', async (req: Request, res: Response) => {
   try {
-    const user = await User.findByIdAndDelete(req.params.id);
+    const user = await User.findOneAndDelete({ id: req.params.id });
     if (!user) return res.status(404).json({ message: 'User not found' });
     res.json({ message: 'User deleted' });
   } catch (error) {
