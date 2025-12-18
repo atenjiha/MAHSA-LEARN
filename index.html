@@ -1,44 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MAHSA MicroLearn</title>
-    <!-- Tailwind CSS (CDN is fine for a simple prototype build) -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['Inter', 'sans-serif'],
-            },
-            colors: {
-              mahsa: {
-                navy: '#1e3a8a', 
-                teal: '#06b6d4', 
-                light: '#f0f9ff',
-              }
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MAHSA MicroLearn</title>
+  <!-- Tailwind CSS (CDN is fine for a simple prototype build) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            mahsa: {
+              navy: '#1e3a8a',
+              teal: '#06b6d4',
+              light: '#f0f9ff',
             }
           }
         }
       }
-    </script>
-    <style>
-      body {
-        background-color: #f1f5f9;
-        margin: 0;
-        font-family: 'Inter', sans-serif;
-      }
-      .no-scrollbar::-webkit-scrollbar {
-          display: none;
-      }
-      .no-scrollbar {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-      }
-    </style>
+    }
+  </script>
+  <style>
+    body {
+      background-color: #f1f5f9;
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
   <script type="importmap">
 {
   "imports": {
@@ -53,9 +56,11 @@
 }
 </script>
 </head>
-  <body>
-    <div id="root"></div>
-    <!-- Module Entry Point for Vite -->
-    <script type="module" src="/index.tsx"></script>
-  </body>
+
+<body>
+  <div id="root"></div>
+  <!-- Module Entry Point for Vite -->
+  <script type="module" src="/index.tsx"></script>
+</body>
+
 </html>
