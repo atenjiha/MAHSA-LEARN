@@ -7,4 +7,8 @@ export default defineConfig({
   server: {
     port: 3000,
   },
+<<<<<<< HEAD
 })
+=======
+});
+>>>>>>> 308975a424bab5ca895f67b90d202883bc20a4eb

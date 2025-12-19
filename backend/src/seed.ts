@@ -89,7 +89,7 @@ const INITIAL_COURSES = [
                 id: 's2',
                 type: 'video',
                 title: 'The 5 Moments',
-                content: 'https://www.youtube.com/embed/IisgnbMfKvI',
+                content: 'https://www.youtube.com/embed/IisgnbMfKvI?rel=0&modestbranding=1&enablejsapi=1',
             },
             {
                 id: 's3',
