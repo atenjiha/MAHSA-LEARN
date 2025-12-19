@@ -1,5 +1,6 @@
 // API Base URL - uses environment variable or defaults to localhost
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+// @ts-ignore
+const API_URL = 'http://10.1.122.24:5001';
 
 // Helper function for API calls
 async function apiCall<T>(endpoint: string, options?: RequestInit): Promise<T> {

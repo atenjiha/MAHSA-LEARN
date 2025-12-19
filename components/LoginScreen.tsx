@@ -6,7 +6,7 @@ import { ChevronLeft, KeyRound } from 'lucide-react';
 
 interface LoginScreenProps {
   onLogin: (id: string, pin: string) => void;
-  onResetPin: (id: string, pin: string) => boolean;
+  onResetPin: (id: string, pin: string) => Promise<boolean> | boolean;
   error?: string;
 }
 

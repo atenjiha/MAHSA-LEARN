@@ -2,35 +2,25 @@
     "apps": [
         {
             "name": "mahsa-backend",
-            "script": "dist/server.js",
-            "cwd": "./backend",
-            "instances": 1,
-            "autorestart": true,
-            "watch": false,
-            "max_memory_restart": "1G",
+            "script": "./backend/dist/server.js",
             "env": {
                 "NODE_ENV": "production",
-                "PORT": 5000
+                "PORT": 5001
             },
-            "error_file": "./logs/backend-error.log",
-            "out_file": "./logs/backend-out.log",
-            "log_date_format": "YYYY-MM-DD HH:mm:ss Z"
+            "error_file": "./backend/logs/backend-error.log",
+            "out_file": "./backend/logs/backend-out.log"
         },
         {
             "name": "mahsa-frontend",
-            "script": "npx",
-            "args": "serve -s dist -l 3000",
-            "cwd": "./",
-            "instances": 1,
-            "autorestart": true,
-            "watch": false,
-            "max_memory_restart": "500M",
+            "script": "cmd.exe",
+            "args": "/c npm run preview",  
+            "cwd": "./frontend",
+            "interpreter": "none",
             "env": {
                 "NODE_ENV": "production"
             },
-            "error_file": "./logs/frontend-error.log",
-            "out_file": "./logs/frontend-out.log",
-            "log_date_format": "YYYY-MM-DD HH:mm:ss Z"
+            "error_file": "./frontend/logs/frontend-error.log",
+            "out_file": "./frontend/logs/frontend-out.log"
         }
     ]
 }

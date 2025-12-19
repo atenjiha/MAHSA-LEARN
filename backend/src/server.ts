@@ -2,15 +2,24 @@ import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import path from 'path';
 import usersRouter from './routes/users';
 import coursesRouter from './routes/courses';
 import badgesRouter from './routes/badges';
 
-dotenv.config();
+dotenv.config({ path: path.resolve(process.cwd(), '.env') });
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 const MONGODB_URI = process.env.MONGODB_URI || '';
+
+
+// --- DEBUGGING BLOCK (Add this temporarily) ---
+console.log("------------------------------------------------");
+console.log("DEBUG: Current Directory:", process.cwd());
+console.log("DEBUG: MONGODB_URI value is:", MONGODB_URI ? "LOADED OK" : "UNDEFINED/EMPTY");
+console.log("------------------------------------------------");
+// ---------------------------------------------
 
 // Middleware
 app.use(cors());
